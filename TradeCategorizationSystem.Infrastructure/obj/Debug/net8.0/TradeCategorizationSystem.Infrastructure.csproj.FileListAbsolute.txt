@@ -1,0 +1,34 @@
+/home/airton/git/testando-net/TradeCategorizationSystem.Infrastructure/bin/Debug/net8.0/TradeCategorizationSystem.Infrastructure.deps.json
+/home/airton/git/testando-net/TradeCategorizationSystem.Infrastructure/bin/Debug/net8.0/TradeCategorizationSystem.Infrastructure.runtimeconfig.json
+/home/airton/git/testando-net/TradeCategorizationSystem.Infrastructure/bin/Debug/net8.0/TradeCategorizationSystem.Infrastructure.dll
+/home/airton/git/testando-net/TradeCategorizationSystem.Infrastructure/bin/Debug/net8.0/TradeCategorizationSystem.Infrastructure.pdb
+/home/airton/git/testando-net/TradeCategorizationSystem.Infrastructure/bin/Debug/net8.0/TradeCategorizationSystem.Domain.dll
+/home/airton/git/testando-net/TradeCategorizationSystem.Infrastructure/bin/Debug/net8.0/TradeCategorizationSystem.Domain.pdb
+/home/airton/git/testando-net/TradeCategorizationSystem.Infrastructure/obj/Debug/net8.0/TradeCategorizationSystem.Infrastructure.csproj.AssemblyReference.cache
+/home/airton/git/testando-net/TradeCategorizationSystem.Infrastructure/obj/Debug/net8.0/TradeCategorizationSystem.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/home/airton/git/testando-net/TradeCategorizationSystem.Infrastructure/obj/Debug/net8.0/TradeCategorizationSystem.Infrastructure.AssemblyInfoInputs.cache
+/home/airton/git/testando-net/TradeCategorizationSystem.Infrastructure/obj/Debug/net8.0/TradeCategorizationSystem.Infrastructure.AssemblyInfo.cs
+/home/airton/git/testando-net/TradeCategorizationSystem.Infrastructure/obj/Debug/net8.0/TradeCategorizationSystem.Infrastructure.csproj.CoreCompileInputs.cache
+/home/airton/git/testando-net/TradeCategorizationSystem.Infrastructure/obj/Debug/net8.0/TradeCategorizationSystem.Infrastructure.csproj.CopyComplete
+/home/airton/git/testando-net/TradeCategorizationSystem.Infrastructure/obj/Debug/net8.0/TradeCategorizationSystem.Infrastructure.dll
+/home/airton/git/testando-net/TradeCategorizationSystem.Infrastructure/obj/Debug/net8.0/refint/TradeCategorizationSystem.Infrastructure.dll
+/home/airton/git/testando-net/TradeCategorizationSystem.Infrastructure/obj/Debug/net8.0/TradeCategorizationSystem.Infrastructure.pdb
+/home/airton/git/testando-net/TradeCategorizationSystem.Infrastructure/obj/Debug/net8.0/TradeCategorizationSystem.Infrastructure.genruntimeconfig.cache
+/home/airton/git/testando-net/TradeCategorizationSystem.Infrastructure/obj/Debug/net8.0/ref/TradeCategorizationSystem.Infrastructure.dll
+/home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Infrastructure/obj/Debug/net8.0/TradeCategorizationSystem.Infrastructure.csproj.AssemblyReference.cache
+/home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Infrastructure/obj/Debug/net8.0/TradeCategorizationSystem.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Infrastructure/obj/Debug/net8.0/TradeCategorizationSystem.Infrastructure.AssemblyInfoInputs.cache
+/home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Infrastructure/obj/Debug/net8.0/TradeCategorizationSystem.Infrastructure.AssemblyInfo.cs
+/home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Infrastructure/obj/Debug/net8.0/TradeCategorizationSystem.Infrastructure.csproj.CoreCompileInputs.cache
+/home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Infrastructure/bin/Debug/net8.0/TradeCategorizationSystem.Infrastructure.deps.json
+/home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Infrastructure/bin/Debug/net8.0/TradeCategorizationSystem.Infrastructure.runtimeconfig.json
+/home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Infrastructure/bin/Debug/net8.0/TradeCategorizationSystem.Infrastructure.dll
+/home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Infrastructure/bin/Debug/net8.0/TradeCategorizationSystem.Infrastructure.pdb
+/home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Infrastructure/bin/Debug/net8.0/TradeCategorizationSystem.Domain.dll
+/home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Infrastructure/bin/Debug/net8.0/TradeCategorizationSystem.Domain.pdb
+/home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Infrastructure/obj/Debug/net8.0/TradeCategorizationSystem.Infrastructure.csproj.CopyComplete
+/home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Infrastructure/obj/Debug/net8.0/TradeCategorizationSystem.Infrastructure.dll
+/home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Infrastructure/obj/Debug/net8.0/refint/TradeCategorizationSystem.Infrastructure.dll
+/home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Infrastructure/obj/Debug/net8.0/TradeCategorizationSystem.Infrastructure.pdb
+/home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Infrastructure/obj/Debug/net8.0/TradeCategorizationSystem.Infrastructure.genruntimeconfig.cache
+/home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Infrastructure/obj/Debug/net8.0/ref/TradeCategorizationSystem.Infrastructure.dll
