@@ -1,0 +1,34 @@
+name: Criar Branch Preprod
+
+on:
+  workflow_dispatch:
+    inputs:
+      data:
+        description: 'Data (YYYYMMDD) para o nome da branch (Ex: 20250815)'
+        required: true
+        default: '{{ format(github.event.client_payload.timestamp, "YYYYMMDD") }}'
+
+jobs:
+  create-branch:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Adiciona permissão de escrita para o token
+    steps:
+      - name: Checkout do código de main
+        uses: actions/checkout@v4
+        with:
+          # Alterar o nome do repositório para o seu novo repositório
+          repository: 'airtonomoreira/TradeCategorizationSystem'
+          ref: 'main'
+          fetch-depth: 0
+
+      - name: Definir nome da branch com a data de hoje
+        id: branch_name
+        run: echo "branch_name=preprod_${{ github.event.inputs.data }}" >> $GITHUB_ENV
+
+      - name: Criar a nova branch
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git checkout -b ${{ env.branch_name }}
+          git push origin ${{ env.branch_name }}
