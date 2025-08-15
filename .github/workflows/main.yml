@@ -20,5 +20,9 @@ jobs:
         run: |
           git config --global user.name 'github-actions'
           git config --global user.email 'github-actions@github.com'
+          
+          # Ação para garantir que o git local saiba sobre a nova branch
           git checkout -b ${{ steps.branch_name.outputs.branch_name }}
+          
+          # Envia a nova branch para o repositório remoto
           git push origin ${{ steps.branch_name.outputs.branch_name }}
