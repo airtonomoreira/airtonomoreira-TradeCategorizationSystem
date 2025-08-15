@@ -18,8 +18,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           # Clona o repositório atual, pois não é necessário um token se o workflow estiver aqui
-          repository: 'airtonomoreira/TradeCategorizationSystem'
-          ref: 'Prod_B3Way'
+          repository: 'https://github.com/airtonomoreira/airtonomoreira-TradeCategorizationSystem/'
+          ref: 'main'
           fetch-depth: 0
 
       - name: Definir nome da branch com a data de hoje
