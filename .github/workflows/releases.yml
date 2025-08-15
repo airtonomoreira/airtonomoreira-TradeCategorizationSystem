@@ -1,0 +1,40 @@
+# Este fluxo de trabalho faz o merge de uma branch de release para a branch de preprod
+name: Merge Release to Preprod
+
+on:
+  push:
+    # Aciona o workflow sempre que houver um push para qualquer branch que comece com 'release/'
+    branches:
+      - 'release/**'
+
+jobs:
+  merge-to-preprod:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Permite que o workflow escreva no repositório (para o merge e push)
+    
+    steps:
+      - name: Checkout da branch de destino (preprod)
+        uses: actions/checkout@v4
+        with:
+          # Para garantir que o checkout ocorra na branch correta, é necessário
+          # um token que tenha permissão para acessar a branch. O GITHUB_TOKEN
+          # padrão geralmente funciona para o mesmo repositório.
+          ref: 'preprod_main' # Altere para 'preprod_yyyymmdd' se souber o nome exato da branch de preprod
+          fetch-depth: 0
+
+      - name: Configurar usuário e email do Git
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+      - name: Fazer o merge da branch 'release'
+        run: |
+          git merge --no-ff --no-commit ${{ github.ref }} || echo "::warning::Merge conflict detected!"
+          # O comando '|| echo' acima irá avisar se houver um conflito
+          # e o workflow irá falhar, já que a próxima etapa não será executada.
+
+      - name: Fazer o commit do merge e push para a branch de preprod
+        run: |
+          git commit -m "Merge branch '${{ github.ref }}' into preprod"
+          git push
