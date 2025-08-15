@@ -6,7 +6,8 @@ on:
       data:
         description: 'Data (YYYYMMDD) para o nome da branch (Ex: 20250815)'
         required: true
-        default: '{{ format(github.event.client_payload.timestamp, "YYYYMMDD") }}'
+        # Uma forma mais robusta de garantir que a data está presente
+        default: '20250815'
 
 jobs:
   create-branch:
@@ -14,16 +15,17 @@ jobs:
     permissions:
       contents: write  # Adiciona permissão de escrita para o token
     steps:
-      - name: Checkout do código de Prod_B3Way
+      - name: Checkout do código
         uses: actions/checkout@v4
         with:
-          # Clona o repositório atual, pois não é necessário um token se o workflow estiver aqui
           repository: 'airtonomoreira/airtonomoreira-TradeCategorizationSystem'
+          # A branch 'main' sempre deve existir, use-a como base
           ref: 'main'
           fetch-depth: 0
 
       - name: Definir nome da branch com a data de hoje
         id: branch_name
+        # Adicione a data no nome da branch a partir do input
         run: echo "branch_name=preprod_${{ github.event.inputs.data }}" >> $GITHUB_ENV
 
       - name: Criar a nova branch
