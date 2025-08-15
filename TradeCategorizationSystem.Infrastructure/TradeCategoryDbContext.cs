@@ -11,11 +11,11 @@ namespace TradeCategorizationSystem.Infrastructure
         {
         }
 
-protected override void OnModelCreating(ModelBuilder modelBuilder)
-{
-    modelBuilder.Entity<Category>().ToTable("Categories");
-    modelBuilder.ApplyConfiguration(new CategoryConfiguration());
-}
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Category>().ToTable("Categories");
+            modelBuilder.ApplyConfiguration(new CategoryConfiguration());
+        }
 
     }
 }
