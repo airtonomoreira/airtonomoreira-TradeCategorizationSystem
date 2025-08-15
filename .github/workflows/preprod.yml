@@ -14,13 +14,15 @@ jobs:
     permissions:
       contents: write  # Adiciona permissão de escrita para o token
     steps:
-      - name: Checkout do código de main
+      - name: Checkout do código de Prod_B3Way
         uses: actions/checkout@v4
         with:
-          # Alterar o nome do repositório para o seu novo repositório
+          # Use o token de acesso pessoal para o checkout de um repositório diferente
+          # Verifique se o nome do repositório está correto (incluindo maiúsculas/minúsculas)
           repository: 'airtonomoreira/TradeCategorizationSystem'
-          ref: 'main'
+          ref: 'Prod_B3Way'
           fetch-depth: 0
+          token: ${{ secrets.OTHER_REPO_TOKEN }} # Adicione este token de acesso pessoal (PAT) com permissão para o repositório
 
       - name: Definir nome da branch com a data de hoje
         id: branch_name
