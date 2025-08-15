@@ -9,6 +9,7 @@ namespace TradeCategorizationSystem.Infrastructure
 
         public TradeCategoryDbContext(DbContextOptions<TradeCategoryDbContext> options) : base(options)
         {
+            //todo
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
