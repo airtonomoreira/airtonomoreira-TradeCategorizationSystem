@@ -7,7 +7,7 @@ jobs:
       - name: Checkout do repositório
         uses: actions/checkout@v4
         with:
-          ref: 'master'
+          ref: 'main'
 
       - name: Definir nome da branch com a data yyyymmaa
         id: branch_name
