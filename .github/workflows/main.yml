@@ -1,21 +1,40 @@
+name: Merge Release to Preprod
+
+on:
+  push:
+    branches:
+      - 'release/*'
+
 jobs:
-  create-branch:
+  merge-to-preprod:
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-      - name: Checkout do repositório
+      - name: Debug Trigger
+        run: |
+          echo "Workflow triggered for branch: ${{ github.ref_name }}"
+          echo "Repository: ${{ github.repository }}"
+          echo "Event: ${{ github.event_name }}"
+
+      - name: Checkout da branch de destino (preprod)
         uses: actions/checkout@v4
         with:
-          ref: 'main'
+          ref: 'preprod_20250815'
+          fetch-depth: 0
 
-      - name: Definir nome da branch com a data yyyymmaa
-        id: branch_name
-        run: echo "branch_name=preprod_$(date +'%Y%m%d')" >> $GITHUB_OUTPUT
-
-      - name: Criar e push da branch
+      - name: Configurar usuário e email do Git
         run: |
-          git config --global user.name 'github-actions'
-          git config --global user.email 'github-actions@github.com'
-          git checkout -b ${{ steps.branch_name.outputs.branch_name }}
-          git push origin ${{ steps.branch_name.outputs.branch_name }}
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+      - name: Fazer o merge e o push para a branch de preprod
+        run: |
+          echo "Branch atual: $(git branch --show-current)"
+          echo "Tentando merge de ${{ github.ref_name }} para preprod"
+          if ! git merge --no-ff ${{ github.ref_name }}; then
+            echo "Erro: Conflito de merge detectado. Resolva os conflitos manualmente."
+            exit 1
+          fi
+          echo "Merge bem-sucedido, fazendo push..."
+          git push origin HEAD
