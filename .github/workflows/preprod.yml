@@ -17,12 +17,10 @@ jobs:
       - name: Checkout do código de Prod_B3Way
         uses: actions/checkout@v4
         with:
-          # Use o token de acesso pessoal para o checkout de um repositório diferente
-          # Verifique se o nome do repositório está correto (incluindo maiúsculas/minúsculas)
+          # Clona o repositório atual, pois não é necessário um token se o workflow estiver aqui
           repository: 'airtonomoreira/TradeCategorizationSystem'
           ref: 'Prod_B3Way'
           fetch-depth: 0
-          token: ${{ secrets.OTHER_REPO_TOKEN }} # Adicione este token de acesso pessoal (PAT) com permissão para o repositório
 
       - name: Definir nome da branch com a data de hoje
         id: branch_name
