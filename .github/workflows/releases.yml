@@ -1,24 +1,21 @@
-# Este fluxo de trabalho faz o merge de uma branch de release para a branch de preprod
 name: Merge Release to Preprod
 
 on:
   push:
-    # Aciona o workflow sempre que houver um push para qualquer branch que comece com 'release/'
     branches:
-      - 'release/**'
+      - 'release/*'
 
 jobs:
   merge-to-preprod:
     runs-on: ubuntu-latest
     permissions:
-      contents: write # Permite que o workflow escreva no repositório (para o merge e push)
+      contents: write
     
     steps:
       - name: Checkout da branch de destino (preprod)
         uses: actions/checkout@v4
         with:
-          # Alterado para o nome real da sua branch de preprod
-          ref: 'preprod_20250815' 
+          ref: 'preprod_20250815'
           fetch-depth: 0
 
       - name: Configurar usuário e email do Git
@@ -28,9 +25,11 @@ jobs:
 
       - name: Fazer o merge e o push para a branch de preprod
         run: |
-          # Fazer o merge da branch 'release' para a 'preprod'.
-          # O comando irá falhar automaticamente se houver um conflito.
-          git merge --no-ff ${{ github.ref }}
-
-          # Se o merge foi bem-sucedido, fazer o push para o repositório.
+          echo "Branch atual: $(git branch --show-current)"
+          echo "Tentando merge de ${{ github.ref_name }} para preprod"
+          if ! git merge --no-ff ${{ github.ref_name }}; then
+            echo "Erro: Conflito de merge detectado. Resolva os conflitos manualmente."
+            exit 1
+          fi
+          echo "Merge bem-sucedido, fazendo push..."
           git push origin HEAD
