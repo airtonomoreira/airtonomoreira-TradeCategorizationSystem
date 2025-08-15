@@ -1,45 +1,32 @@
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using TradeCategorizationSystem.Domain;
-using TradeCategorizationSystem.Application.Service;
+using TradeCategorizationSystem.Domain.Interfaces;
+
 namespace TradeCategorizationSystem.Application
 {
     public class TradeCategorizationService
     {
-        private readonly List<ICategoryStrategy> _strategies;
-        private readonly CategoryService _categoryService; 
-        public TradeCategorizationService(List<ICategoryStrategy> strategies, CategoryService categoryService)
-        {
-            _categoryService = categoryService; 
-            strategies.Add(new ExpiredCategoryStrategy());
-            strategies.Add(new RiskCategoryStrategy(_categoryService));
+        private readonly ITradeRepository _tradeRepository;
+        private readonly ICategoryStrategy _categoryStrategy;
 
-            _strategies = strategies; 
+        public TradeCategorizationService(ITradeRepository tradeRepository, ICategoryStrategy categoryStrategy)
+        {
+            _tradeRepository = tradeRepository;
+            _categoryStrategy = categoryStrategy;
         }
 
-        public async Task<string> CategorizeTradeAsync(ITrade trade, DateTime referenceDate)
+        public IEnumerable<string> CategorizeTrades()
         {
-            var categories = await _categoryService.GetAllCategoriesAsync(); 
-            foreach (var category in categories)
+            var trades = _tradeRepository.GetAll();
+            var categorizedTrades = new List<string>();
+
+            foreach (var trade in trades)
             {
-
-                if (IsTradeExpired(trade, referenceDate))
-                {
-                    return "EXPIRED"; 
-                }
-
-                if (trade.Value >= category.InitialValue && trade.Value <= category.FinalValue &&
-                    trade.ClientSector.ToUpper() == category.ClientSector.ToUpper())
-                {
-                    return category.Name; 
-                }
+                categorizedTrades.Add(_categoryStrategy.Categorize(trade));
             }
-            return "Uncategorized"; 
-        } 
 
-
-        private bool IsTradeExpired(ITrade trade, DateTime referenceDate)
-        {
-            return trade.NextPaymentDate < referenceDate.AddDays(-30); 
+            return categorizedTrades;
         }
-
     }
 }

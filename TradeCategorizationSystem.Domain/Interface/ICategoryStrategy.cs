@@ -1,13 +1,9 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using TradeCategorizationSystem.Domain;
 
-namespace TradeCategorizationSystem.Domain
+namespace TradeCategorizationSystem.Domain.Interfaces
 {
     public interface ICategoryStrategy
     {
-        string Categorize(ITrade trade);
+        string Categorize(Trade trade);
     }
-
 }

@@ -7,23 +7,30 @@ namespace TradeCategorizationSystem.Domain
 {
     public class Category
     {
-        public int Id { get; set; } 
-        public string Name { get; set; }
-        public double InitialValue { get; set; }
-        public double FinalValue { get; set; } 
-        public string ClientSector { get; set; }
-        public bool IsActive { get; set; } = false;
-
-   
-        public Category() { }
+        public int Id { get; private set; }
+        public string Name { get; private set; }
+        public double InitialValue { get; private set; }
+        public double FinalValue { get; private set; }
+        public string ClientSector { get; private set; }
+        public bool IsActive { get; private set; }
 
         public Category(string name, double initialValue, double? finalValue, string clientSector, bool isActive)
         {
             Name = name;
             InitialValue = initialValue;
-            FinalValue = finalValue ?? double.MaxValue; 
+            FinalValue = finalValue ?? double.MaxValue;
             ClientSector = clientSector;
             IsActive = isActive;
+        }
+
+        public void Activate()
+        {
+            IsActive = true;
+        }
+
+        public void Deactivate()
+        {
+            IsActive = false;
         }
     }
 }

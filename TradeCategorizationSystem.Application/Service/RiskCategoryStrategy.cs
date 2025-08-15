@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using TradeCategorizationSystem.Domain;
 using TradeCategorizationSystem.Application;
+using TradeCategorizationSystem.Domain.Interfaces;
 
 namespace TradeCategorizationSystem.Application.Service
 {
@@ -14,7 +15,7 @@ namespace TradeCategorizationSystem.Application.Service
             _categoryService = categoryService;
         }
 
-        public string Categorize(ITrade trade) 
+        public string Categorize(Trade trade) 
         {
             var categories = _categoryService.GetAllCategoriesAsync().Result; 
             foreach (var category in categories)
@@ -29,4 +30,3 @@ namespace TradeCategorizationSystem.Application.Service
         }
     }
 }
-

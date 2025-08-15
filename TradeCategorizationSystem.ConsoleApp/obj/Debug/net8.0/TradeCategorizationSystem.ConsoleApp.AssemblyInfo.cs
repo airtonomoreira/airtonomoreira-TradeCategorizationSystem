@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TradeCategorizationSystem.ConsoleApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cdfdea305a329decc8bbd07537a914bb40c3dda4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa2408e6b84c7b249cf1056b99445c7ded8dfc69")]
 [assembly: System.Reflection.AssemblyProductAttribute("TradeCategorizationSystem.ConsoleApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TradeCategorizationSystem.ConsoleApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
