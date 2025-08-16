@@ -11,7 +11,6 @@ namespace TradeCategorizationSystem.Application
             _categoryService = categoryService; 
             strategies.Add(new ExpiredCategoryStrategy());
             strategies.Add(new RiskCategoryStrategy(_categoryService));
-
             _strategies = strategies; 
         }
 
