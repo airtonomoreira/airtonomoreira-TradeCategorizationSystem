@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TradeCategorizationSystem.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fa2408e6b84c7b249cf1056b99445c7ded8dfc69")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d44afc3d41390d0c3787b36ae057914ef7e24c4e")]
 [assembly: System.Reflection.AssemblyProductAttribute("TradeCategorizationSystem.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TradeCategorizationSystem.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
