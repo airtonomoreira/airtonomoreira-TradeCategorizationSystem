@@ -1,25 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "/home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Infrastructure/TradeCategorizationSystem.Infrastructure.csproj": {}
+    "D:\\git\\testeTradeCategorization\\airtonomoreira-TradeCategorizationSystem\\TradeCategorizationSystem.Infrastructure\\TradeCategorizationSystem.Infrastructure.csproj": {}
   },
   "projects": {
-    "/home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Domain/TradeCategorizationSystem.Domain.csproj": {
+    "D:\\git\\testeTradeCategorization\\airtonomoreira-TradeCategorizationSystem\\TradeCategorizationSystem.Domain\\TradeCategorizationSystem.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Domain/TradeCategorizationSystem.Domain.csproj",
+        "projectUniqueName": "D:\\git\\testeTradeCategorization\\airtonomoreira-TradeCategorizationSystem\\TradeCategorizationSystem.Domain\\TradeCategorizationSystem.Domain.csproj",
         "projectName": "TradeCategorizationSystem.Domain",
-        "projectPath": "/home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Domain/TradeCategorizationSystem.Domain.csproj",
-        "packagesPath": "/home/airton/.nuget/packages/",
-        "outputPath": "/home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Domain/obj/",
+        "projectPath": "D:\\git\\testeTradeCategorization\\airtonomoreira-TradeCategorizationSystem\\TradeCategorizationSystem.Domain\\TradeCategorizationSystem.Domain.csproj",
+        "packagesPath": "C:\\Users\\airto\\.nuget\\packages\\",
+        "outputPath": "D:\\git\\testeTradeCategorization\\airtonomoreira-TradeCategorizationSystem\\TradeCategorizationSystem.Domain\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/airton/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\airto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -32,7 +39,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -53,34 +66,41 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.112/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "/home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Infrastructure/TradeCategorizationSystem.Infrastructure.csproj": {
+    "D:\\git\\testeTradeCategorization\\airtonomoreira-TradeCategorizationSystem\\TradeCategorizationSystem.Infrastructure\\TradeCategorizationSystem.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Infrastructure/TradeCategorizationSystem.Infrastructure.csproj",
+        "projectUniqueName": "D:\\git\\testeTradeCategorization\\airtonomoreira-TradeCategorizationSystem\\TradeCategorizationSystem.Infrastructure\\TradeCategorizationSystem.Infrastructure.csproj",
         "projectName": "TradeCategorizationSystem.Infrastructure",
-        "projectPath": "/home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Infrastructure/TradeCategorizationSystem.Infrastructure.csproj",
-        "packagesPath": "/home/airton/.nuget/packages/",
-        "outputPath": "/home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Infrastructure/obj/",
+        "projectPath": "D:\\git\\testeTradeCategorization\\airtonomoreira-TradeCategorizationSystem\\TradeCategorizationSystem.Infrastructure\\TradeCategorizationSystem.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\airto\\.nuget\\packages\\",
+        "outputPath": "D:\\git\\testeTradeCategorization\\airtonomoreira-TradeCategorizationSystem\\TradeCategorizationSystem.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "/home/airton/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\airto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Domain/TradeCategorizationSystem.Domain.csproj": {
-                "projectPath": "/home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Domain/TradeCategorizationSystem.Domain.csproj"
+              "D:\\git\\testeTradeCategorization\\airtonomoreira-TradeCategorizationSystem\\TradeCategorizationSystem.Domain\\TradeCategorizationSystem.Domain.csproj": {
+                "projectPath": "D:\\git\\testeTradeCategorization\\airtonomoreira-TradeCategorizationSystem\\TradeCategorizationSystem.Domain\\TradeCategorizationSystem.Domain.csproj"
               }
             }
           }
@@ -89,7 +109,13 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
@@ -126,7 +152,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.112/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.302/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

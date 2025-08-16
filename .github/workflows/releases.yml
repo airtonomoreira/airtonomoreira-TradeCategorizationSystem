@@ -1,0 +1,59 @@
+name: Merge Release to Preprod
+
+on:
+  push:
+    branches:
+      - 'release/*'
+
+jobs:
+  merge-to-preprod:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Debug Trigger
+        run: |
+          echo "Workflow triggered for branch: ${{ github.ref_name }}"
+          echo "Repository: ${{ github.repository }}"
+          echo "Event: ${{ github.event_name }}"
+
+      # Este passo faz o checkout da branch da release e busca todo o histórico
+      - name: Fetch all remote branches
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Find latest preprod branch
+        id: find_preprod
+        run: |
+          # Lista as branches remotas que correspondem a 'preprod_*', ordena para obter a mais recente e pega a primeira.
+          # A ordenação funciona porque o formato da data é YYYYMMDD.
+          LATEST_PREPROD_BRANCH=$(git branch -r | grep 'origin/preprod_' | sed 's/ *origin\///' | sort -r | head -n 1)
+
+          if [ -z "$LATEST_PREPROD_BRANCH" ]; then
+            echo "::error::Nenhuma branch remota correspondendo a 'preprod_*' foi encontrada."
+            exit 1
+          fi
+
+          echo "Última branch preprod encontrada: $LATEST_PREPROD_BRANCH"
+          echo "preprod_branch=$LATEST_PREPROD_BRANCH" >> $GITHUB_ENV
+
+      - name: Checkout da branch de destino (preprod)
+        run: git checkout ${{ env.preprod_branch }}
+
+      - name: Configurar usuário e email do Git
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+      - name: Fazer o merge e o push para a branch de preprod
+        run: |
+          echo "Branch atual: $(git branch --show-current)"
+          echo "Tentando merge de ${{ github.ref_name }} para ${{ env.preprod_branch }}"
+          # Usa --no-edit para evitar abrir um editor para a mensagem de commit do merge
+          if ! git merge --no-ff --no-edit ${{ github.ref_name }}; then
+            echo "Erro: Conflito de merge detectado. Resolva os conflitos manualmente."
+            exit 1
+          fi
+          echo "Merge bem-sucedido, fazendo push..."
+          git push origin ${{ env.preprod_branch }}
