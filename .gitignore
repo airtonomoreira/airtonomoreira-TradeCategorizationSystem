@@ -1,0 +1,17 @@
+
+# Visual Studio
+.vs/
+*.[Pp]db
+*.[Ss]uo
+*.[Uu]ser
+*.[Uu]serosscache
+*.[Cc]sproj.user
+
+# Build results
+[Bb]in/
+[Oo]bj/
+
+# Databases
+*.db
+*.db-shm
+*.db-wal
