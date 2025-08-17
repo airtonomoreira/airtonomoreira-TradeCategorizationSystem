@@ -20,3 +20,15 @@
 /home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Domain/obj/Debug/net8.0/refint/TradeCategorizationSystem.Domain.dll
 /home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Domain/obj/Debug/net8.0/TradeCategorizationSystem.Domain.pdb
 /home/airton/git/net/Testes de Emprego/testando-net-UBS/TradeCategorizationSystem.Domain/obj/Debug/net8.0/ref/TradeCategorizationSystem.Domain.dll
+d:\git\testeTradeCategorization\airtonomoreira-TradeCategorizationSystem\TradeCategorizationSystem.Domain\bin\Debug\net8.0\TradeCategorizationSystem.Domain.deps.json
+d:\git\testeTradeCategorization\airtonomoreira-TradeCategorizationSystem\TradeCategorizationSystem.Domain\bin\Debug\net8.0\TradeCategorizationSystem.Domain.dll
+d:\git\testeTradeCategorization\airtonomoreira-TradeCategorizationSystem\TradeCategorizationSystem.Domain\bin\Debug\net8.0\TradeCategorizationSystem.Domain.pdb
+d:\git\testeTradeCategorization\airtonomoreira-TradeCategorizationSystem\TradeCategorizationSystem.Domain\obj\Debug\net8.0\TradeCategorizationSystem.Domain.GeneratedMSBuildEditorConfig.editorconfig
+d:\git\testeTradeCategorization\airtonomoreira-TradeCategorizationSystem\TradeCategorizationSystem.Domain\obj\Debug\net8.0\TradeCategorizationSystem.Domain.AssemblyInfoInputs.cache
+d:\git\testeTradeCategorization\airtonomoreira-TradeCategorizationSystem\TradeCategorizationSystem.Domain\obj\Debug\net8.0\TradeCategorizationSystem.Domain.AssemblyInfo.cs
+d:\git\testeTradeCategorization\airtonomoreira-TradeCategorizationSystem\TradeCategorizationSystem.Domain\obj\Debug\net8.0\TradeCategorizationSystem.Domain.csproj.CoreCompileInputs.cache
+d:\git\testeTradeCategorization\airtonomoreira-TradeCategorizationSystem\TradeCategorizationSystem.Domain\obj\Debug\net8.0\TradeCategorizationSystem.Domain.sourcelink.json
+d:\git\testeTradeCategorization\airtonomoreira-TradeCategorizationSystem\TradeCategorizationSystem.Domain\obj\Debug\net8.0\TradeCategorizationSystem.Domain.dll
+d:\git\testeTradeCategorization\airtonomoreira-TradeCategorizationSystem\TradeCategorizationSystem.Domain\obj\Debug\net8.0\refint\TradeCategorizationSystem.Domain.dll
+d:\git\testeTradeCategorization\airtonomoreira-TradeCategorizationSystem\TradeCategorizationSystem.Domain\obj\Debug\net8.0\TradeCategorizationSystem.Domain.pdb
+d:\git\testeTradeCategorization\airtonomoreira-TradeCategorizationSystem\TradeCategorizationSystem.Domain\obj\Debug\net8.0\ref\TradeCategorizationSystem.Domain.dll

@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Git\\testeTradeCategorization\\airtonomoreira-TradeCategorizationSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8135914E-EF4E-4B52-9D8C-02FDEB2CD4D3}|TradeCategorizationSystem.Application\\TradeCategorizationSystem.Application.csproj|d:\\git\\testetradecategorization\\airtonomoreira-tradecategorizationsystem\\tradecategorizationsystem.application\\service\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8135914E-EF4E-4B52-9D8C-02FDEB2CD4D3}|TradeCategorizationSystem.Application\\TradeCategorizationSystem.Application.csproj|solutionrelative:tradecategorizationsystem.application\\service\\categoryservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8476778-F0C8-4469-9001-0CEFF2293926}|TradeCategorizationSystem.ConsoleApp\\TradeCategorizationSystem.ConsoleApp.csproj|d:\\git\\testetradecategorization\\airtonomoreira-tradecategorizationsystem\\tradecategorizationsystem.consoleapp\\menuhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8476778-F0C8-4469-9001-0CEFF2293926}|TradeCategorizationSystem.ConsoleApp\\TradeCategorizationSystem.ConsoleApp.csproj|solutionrelative:tradecategorizationsystem.consoleapp\\menuhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F8476778-F0C8-4469-9001-0CEFF2293926}|TradeCategorizationSystem.ConsoleApp\\TradeCategorizationSystem.ConsoleApp.csproj|d:\\git\\testetradecategorization\\airtonomoreira-tradecategorizationsystem\\tradecategorizationsystem.consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F8476778-F0C8-4469-9001-0CEFF2293926}|TradeCategorizationSystem.ConsoleApp\\TradeCategorizationSystem.ConsoleApp.csproj|solutionrelative:tradecategorizationsystem.consoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CategoryService.cs",
+              "DocumentMoniker": "D:\\Git\\testeTradeCategorization\\airtonomoreira-TradeCategorizationSystem\\TradeCategorizationSystem.Application\\Service\\CategoryService.cs",
+              "RelativeDocumentMoniker": "TradeCategorizationSystem.Application\\Service\\CategoryService.cs",
+              "ToolTip": "D:\\Git\\testeTradeCategorization\\airtonomoreira-TradeCategorizationSystem\\TradeCategorizationSystem.Application\\Service\\CategoryService.cs",
+              "RelativeToolTip": "TradeCategorizationSystem.Application\\Service\\CategoryService.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAqwDUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T17:05:07.702Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MenuHandler.cs",
+              "DocumentMoniker": "D:\\Git\\testeTradeCategorization\\airtonomoreira-TradeCategorizationSystem\\TradeCategorizationSystem.ConsoleApp\\MenuHandler.cs",
+              "RelativeDocumentMoniker": "TradeCategorizationSystem.ConsoleApp\\MenuHandler.cs",
+              "ToolTip": "D:\\Git\\testeTradeCategorization\\airtonomoreira-TradeCategorizationSystem\\TradeCategorizationSystem.ConsoleApp\\MenuHandler.cs",
+              "RelativeToolTip": "TradeCategorizationSystem.ConsoleApp\\MenuHandler.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAASwCEAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T16:56:17.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Git\\testeTradeCategorization\\airtonomoreira-TradeCategorizationSystem\\TradeCategorizationSystem.ConsoleApp\\Program.cs",
+              "RelativeDocumentMoniker": "TradeCategorizationSystem.ConsoleApp\\Program.cs",
+              "ToolTip": "D:\\Git\\testeTradeCategorization\\airtonomoreira-TradeCategorizationSystem\\TradeCategorizationSystem.ConsoleApp\\Program.cs",
+              "RelativeToolTip": "TradeCategorizationSystem.ConsoleApp\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-17T16:56:00.635Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
