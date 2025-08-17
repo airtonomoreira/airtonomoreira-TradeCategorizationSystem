@@ -1,11 +1,23 @@
 using TradeCategorizationSystem.Application;
-using TradeCategorizationSystem.Infrastructure;
 using TradeCategorizationSystem.Domain;
-using Microsoft.EntityFrameworkCore;
 using TradeCategorizationSystem.Application.Service;
 
 public class MenuHandler
 {
+    private readonly CategoryService _categoryService;
+    private readonly TradeCategorizationService _tradeCategorizationService;
+    private readonly InputParser _inputParser;
+
+    public MenuHandler(
+        CategoryService categoryService,
+        TradeCategorizationService tradeCategorizationService,
+        InputParser inputParser)
+    {
+        _categoryService = categoryService;
+        _tradeCategorizationService = tradeCategorizationService;
+        _inputParser = inputParser;
+    }
+
     public void ShowMenu()
     {
         Console.WriteLine("1. Add Category");
@@ -18,12 +30,6 @@ public class MenuHandler
 
     public async Task HandleUserInput()
     {
-        var optionsBuilder = new DbContextOptionsBuilder<TradeCategoryDbContext>();
-        optionsBuilder.UseSqlite("Data Source=tradecategories.db");
-        var dbContext = new TradeCategoryDbContext(optionsBuilder.Options);
-        var unitOfWork = new UnitOfWork(dbContext);
-        var categoryService = new CategoryService(unitOfWork);
-
         string input;
         do
         {
@@ -34,23 +40,23 @@ public class MenuHandler
             switch (input)
             {
                 case "1":
-                    await AddCategoryAsync(categoryService);
+                    await AddCategoryAsync();
                     break;
 
                 case "2":
-                    await UpdateCategoryAsync(categoryService);
+                    await UpdateCategoryAsync();
                     break;
 
                 case "3":
-                    await DeleteCategoryAsync(categoryService);
+                    await DeleteCategoryAsync();
                     break;
 
                 case "4":
-                    await ListCategoriesAsync(categoryService);
+                    await ListCategoriesAsync();
                     break;
 
                 case "5":
-                    await CategorizeTradeAsync(categoryService);
+                    await CategorizeTradeAsync();
                     break;
 
                 case "0":
@@ -64,7 +70,7 @@ public class MenuHandler
         } while (input != "0");
     }
 
-    private async Task AddCategoryAsync(CategoryService categoryService)
+    private async Task AddCategoryAsync()
     {
         var categoryDto = new CategoryDto();
         Console.Write("Enter category name: ");
@@ -88,11 +94,11 @@ public class MenuHandler
         string isActiveInput = Console.ReadLine();
         categoryDto.IsActive = isActiveInput == "1";
 
-        await categoryService.AddCategoryAsync(categoryDto);
+        await _categoryService.AddCategoryAsync(categoryDto);
         Console.WriteLine("Category added successfully.");
     }
 
-    private async Task UpdateCategoryAsync(CategoryService categoryService)
+    private async Task UpdateCategoryAsync()
     {
         Console.Write("Enter the name of the category to update: ");
         var categoryNameToUpdate = Console.ReadLine().ToUpper().Trim(); // Normalize input
@@ -102,7 +108,7 @@ public class MenuHandler
             return;
         }
 
-        var existingCategory = await categoryService.GetCategoryByIdAsync(categoryNameToUpdate);
+        var existingCategory = await _categoryService.GetCategoryByIdAsync(categoryNameToUpdate);
         if (existingCategory == null)
         {
             Console.WriteLine("Category not found.");
@@ -123,7 +129,7 @@ public class MenuHandler
         if (!string.IsNullOrWhiteSpace(newCategoryName) && newCategoryName != existingCategory.Name)
         {
    
-            var existingWithNewName = await categoryService.GetCategoryByIdAsync(newCategoryName.ToUpper());
+            var existingWithNewName = await _categoryService.GetCategoryByIdAsync(newCategoryName.ToUpper());
             if (existingWithNewName != null)
             {
                 Console.WriteLine("A category with this name already exists. Please choose a different name.");
@@ -166,34 +172,34 @@ public class MenuHandler
             categoryDtoToUpdate.IsActive = false;
         }
 
-        if (await categoryService.CheckForOverlappingRangesAsync(categoryDtoToUpdate))
+        if (await _categoryService.CheckForOverlappingRangesAsync(categoryDtoToUpdate))
         {
             Console.WriteLine("The new values overlap with an existing range. Update not allowed.");
             return;
         }
 
-        await categoryService.UpdateCategoryAsync(categoryDtoToUpdate);
+        await _categoryService.UpdateCategoryAsync(categoryDtoToUpdate);
         Console.WriteLine("Category updated successfully.");
     }
 
-    private async Task DeleteCategoryAsync(CategoryService categoryService)
+    private async Task DeleteCategoryAsync()
     {
         Console.Write("Enter the name of the category to delete: ");
         var categoryNameToDelete = Console.ReadLine();
-        await categoryService.DeleteCategoryAsync(categoryNameToDelete);
+        await _categoryService.DeleteCategoryAsync(categoryNameToDelete);
         Console.WriteLine("Category deleted successfully.");
     }
 
-    private async Task ListCategoriesAsync(CategoryService categoryService)
+    private async Task ListCategoriesAsync()
     {
-        var existingCategories = await categoryService.GetAllCategoriesAsync();
+        var existingCategories = await _categoryService.GetAllCategoriesAsync();
         foreach (var category in existingCategories)
         {
             Console.WriteLine($"Name: {category.Name}, Initial Value: {category.InitialValue}, Final Value: {category.FinalValue}, Client Sector: {category.ClientSector}, Active: {category.IsActive}");
         }
     }
 
-    private async Task CategorizeTradeAsync(CategoryService categoryService)
+    private async Task CategorizeTradeAsync()
     {
         Console.Write("Enter reference date (MM/dd/yyyy): ");
         var referenceDateInput = Console.ReadLine();
@@ -211,36 +217,26 @@ public class MenuHandler
             return;
         }
 
-
-        var strategies = new List<ICategoryStrategy>
-        {
-            new ExpiredCategoryStrategy(),
-            new RiskCategoryStrategy(categoryService)
-        };
-
-        var tradeCategorizationService = new TradeCategorizationService(strategies, categoryService);
         List<string> tradeCategories = new List<string>();
 
         for (int i = 0; i < numberOfTrades; i++)
         {
             Console.Write($"Enter trade {i + 1} (value clientSector nextPaymentDate): ");
-            var tradeInput = Console.ReadLine().Split(' ');
-            if (tradeInput.Length != 3 ||
-                !double.TryParse(tradeInput[0], out double tradeValue) ||
-                string.IsNullOrWhiteSpace(tradeInput[1]) ||
-                !DateTime.TryParse(tradeInput[2], out DateTime nextPaymentDate))
+            var tradeInput = Console.ReadLine();
+
+            try
             {
-                Console.WriteLine("Invalid input format. Please enter in the format: value clientSector nextPaymentDate");
-                i--;
+                var (tradeValue, clientSector, nextPaymentDate) = _inputParser.ParseTradeInput(tradeInput);
+                ITrade trade = new Trade(tradeValue, clientSector, nextPaymentDate);
+                string category = await _tradeCategorizationService.CategorizeTradeAsync(trade, referenceDate);
+                tradeCategories.Add(category);
+            }
+            catch (ArgumentException ex)
+            {
+                Console.WriteLine(ex.Message);
+                i--; // Tenta novamente a mesma entrada de trade
                 continue;
             }
-
-
-            ITrade trade = new Trade(tradeValue, tradeInput[1], nextPaymentDate);
-
-            string category = await tradeCategorizationService.CategorizeTradeAsync(trade, referenceDate);
-
-            tradeCategories.Add(category);
         }
 
         foreach (var category in tradeCategories)
@@ -249,4 +245,3 @@ public class MenuHandler
         }
     }
 }
-
