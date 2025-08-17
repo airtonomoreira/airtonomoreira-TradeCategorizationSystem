@@ -812,7 +812,10 @@
       "System.Threading.Channels/7.0.0": {},
       "TradeCategorizationSystem.Domain/1.0.0": {
         "runtime": {
-          "TradeCategorizationSystem.Domain.dll": {}
+          "TradeCategorizationSystem.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

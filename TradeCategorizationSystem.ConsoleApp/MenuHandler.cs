@@ -34,6 +34,16 @@ public class MenuHandler
             switch (input)
             {
                 case "1":
+                    try
+                    {
+                        await ListCategoriesAsync(categoryService);
+
+                    }
+                    catch (Exception)
+                    {
+
+                        Console.WriteLine("An error occurred while listing categories. Please try again.");
+                    }
                     await AddCategoryAsync(categoryService);
                     break;
 
